@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="sidePanel.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Meeting Assistant</h1>
+            <div class="status-container">
+                <div class="status-group">
+                    <div class="status-indicator mic-status"></div>
+                    <span class="status-label">Mic</span>
+                </div>
+                <div class="status-group">
+                    <div class="status-indicator system-status"></div>
+                    <span class="status-label">System Audio</span>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <div class="recording-section">
+                <div class="status-text">Recording Status: Idle</div>
+                <button id="recordButton" class="record-button">Start Recording</button>
+                <div id="timer" class="timer">00:00:00</div>
+            </div>
+
+            <section class="transcript-section">
+                <h2>Live Transcript</h2>
+                <div id="transcriptArea" class="transcript-area"></div>
+            </section>
+
+            <section class="saved-meetings">
+                <h2>Saved Meetings</h2>
+                <div id="meetingsList" class="meetings-list"></div>
+            </section>
+        </main>
+    </div>
+
+    <script src="../utils/constants.js"></script>
+    <script src="../services/transcriptionService.js"></script>
+    <script src="../services/geminiApiService.js"></script>
+    <script src="../services/storageService.js"></script>
+    <script src="../services/systemAudioService.js"></script>
+    <script src="sidePanel.js"></script>
+</body>
+</html> 
